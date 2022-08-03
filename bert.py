@@ -34,3 +34,17 @@ if torch.cuda.is_available():
     torch.backends.cudnn.benchmark = False
     current_device = torch.cuda.current_device()
     print("Device:", torch.cuda.get_device_name(current_device))
+    
+    
+# config
+data_dir = os.path.join(os.environ["HOME"], "Workspace/learning/signate/SIGNATE_Student_Cup_2020/data")
+DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+TRAIN_FILE = os.path.join(data_dir, "train.csv")
+TEST_FILE = os.path.join(data_dir, "test.csv")
+MODELS_DIR = "./models/"
+MODEL_NAME = 'bert-base-uncased'
+TRAIN_BATCH_SIZE = 32
+VALID_BATCH_SIZE = 128
+NUM_CLASSES = 4
+EPOCHS = 5
+NUM_SPLITS = 5
